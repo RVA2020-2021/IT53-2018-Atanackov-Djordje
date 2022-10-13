@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,10 @@ import rva.repository.KlijentRepository;
 
 @RestController
 public class KlijentRestController {
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
 	
 	@Autowired
 	private KlijentRepository klijentRepository;
@@ -62,6 +67,11 @@ public class KlijentRestController {
 			return new ResponseEntity<Klijent>(HttpStatus.NO_CONTENT);
 		}
 		klijentRepository.deleteById(id);
+		if (id == -100) {
+			jdbcTemplate.execute(
+				"INSERT INTO \"klijent\"(\"id\", \"ime\", \"prezime\", \"borj_lk\", \"kredit\") "	
+				 + "VALUES (-100, 'Ime Test', 'Prezime Test', 123, 1)"	);
+		}
 		return new ResponseEntity<Klijent>(HttpStatus.OK);
 	}
 

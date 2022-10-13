@@ -1,0 +1,33 @@
+--kredit
+insert into kredit values(1, 'Kratkorocni kredit', 'GK', 'Gotovinski kredit');
+insert into kredit values(2,'Dugorocni kredit', 'DK', 'Stambeni kredit');
+
+select * from kredit
+--tip_racuna
+insert into tip_racuna values(1, 'Dinarski', 'DN', 'Dinarski racun');
+insert into tip_racuna values(2, 'Devizni', 'DV', 'Devizni racun');
+
+select * from tip_racuna
+--klijent
+insert into klijent values(1, 'Marko', 'Markovic', 123456789, 1);
+insert into klijent values(2, 'Darko', 'Darkovic', 123456788, 2);
+insert into klijent values(3, 'Zarko', 'Zarkovic', 123456787, 1);
+insert into klijent values(4, 'Milan', 'Milanovic', 123456786, 2);
+
+select * from klijent
+
+--racun
+insert into racun values(1, 'Tekuci', '555333', 'Platni racun', 1, 1);
+insert into racun values(2, 'Tekuci', '555332', 'Platni racun', 2, 2);
+insert into racun values(3, 'Tekuci', '555331', 'Platni racun', 1, 3);
+insert into racun values(4, 'Tekuci', '555333', 'Platni racun', 2, 4);
+
+select * from racun
+
+
+
+
+
+
+
+
