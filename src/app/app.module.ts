@@ -36,6 +36,8 @@ import { KreditComponent } from './components/kredit/kredit.component';
 import { TipRacunaComponent } from './components/tip-racuna/tip-racuna.component';
 import { KreditDialogComponent } from './components/dialogs/kredit-dialog/kredit-dialog.component';
 import { TipRacunaDialogComponent } from './components/dialogs/tip-racuna-dialog/tip-racuna-dialog.component';
+import { RacunDialogComponent } from './components/dialogs/racun-dialog/racun-dialog.component';
+import { KlijentDialogComponent } from './components/dialogs/klijent-dialog/klijent-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { TipRacunaDialogComponent } from './components/dialogs/tip-racuna-dialog
     KreditComponent,
     TipRacunaComponent,
     KreditDialogComponent,
-    TipRacunaDialogComponent
+    TipRacunaDialogComponent,
+    RacunDialogComponent,
+    KlijentDialogComponent
   ],
   imports: [
     BrowserModule,
