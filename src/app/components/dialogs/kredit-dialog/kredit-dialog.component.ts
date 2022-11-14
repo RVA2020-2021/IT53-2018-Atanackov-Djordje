@@ -24,6 +24,7 @@ export class KreditDialogComponent implements OnInit {
 
   public addKredit(): void {
     this.kreditService.addKredit(this.data).subscribe(() => {
+      this.dialogRef.close();
       this.snackBar.open('Uspesno dodat kredit: ' + this.data.naziv, 'OK', {duration:2500})
     }),
     (error: Error) => {
@@ -34,6 +35,7 @@ export class KreditDialogComponent implements OnInit {
 
   public updateKredit(): void {
     this.kreditService.updateKredit(this.data).subscribe(() => {
+      this.dialogRef.close();
       this.snackBar.open('Uspesno modifikovan kredit: ' + this.data.naziv, 'OK', {
         duration: 2500
       })
@@ -46,6 +48,7 @@ export class KreditDialogComponent implements OnInit {
 
   public deleteKredit(): void {
     this.kreditService.deleteKredit(this.data.id).subscribe(() => {
+      this.dialogRef.close();
       this.snackBar.open('Uspesno obrisan kredit: ' + this.data.naziv, 'OK', {
         duration: 2500
       })

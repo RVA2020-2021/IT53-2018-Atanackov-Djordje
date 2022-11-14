@@ -25,6 +25,14 @@
           <mat-header-cell *matHeaderCellDef mat-sort-header>Oznaka</mat-header-cell>
           <mat-cell *matCellDef="let row">{{ row.oznaka }}</mat-cell>
         </ng-container>
+        <ng-container matColumnDef="tipRacuna">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Tip racuna</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{ row.tipRacuna.naziv }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="klijent">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>klijent</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{ row.klijent.ime }}</mat-cell>
+    </ng-container>
       <!-- Action Buttons -->
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef>

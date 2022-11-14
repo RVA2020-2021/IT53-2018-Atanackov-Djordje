@@ -16,6 +16,7 @@ export class KlijentService {
   }
 
   public addKlijent(klijent: Klijent): Observable<any>{
+    klijent.id = 0;
     return this.httpClient.post(`${KLIJENT_URL}`, klijent);
   }
 

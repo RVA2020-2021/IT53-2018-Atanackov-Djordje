@@ -16,7 +16,7 @@ export class TipRacunaService {
   }
 
   public addTipRacuna(tipRacuna: TipRacuna): Observable<any>{
-    //tipRacuna.id=0;
+    tipRacuna.id=0;
     return this.httpClient.post(`${TIPRACUNA_URL}`, tipRacuna);
   }
 

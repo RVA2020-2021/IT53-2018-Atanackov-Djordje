@@ -20,11 +20,10 @@
             </mat-form-field>
         </div>
         <div mat-dialog-actions>
-            <button mat-button *ngIf="flag ==1" type="submit" (click)="addKredit()" [disabled]="!formControl.valid">Sacuvaj</button>
-            <button mat-button *ngIf="flag ==2" type="submit" (click)="updateKredit()" [disabled]="!formControl.valid">Sacuvaj</button>
-            <button mat-button *ngIf="flag ==3" type="submit" (click)="deleteKredit()" [disabled]="!formControl.valid">Obrisi</button>
+            <button mat-button *ngIf="flag==1" type="submit" (click)="addKredit()" [disabled]="!formControl.valid">Sacuvaj</button>
+            <button mat-button *ngIf="flag==2" type="submit" (click)="updateKredit()" [disabled]="!formControl.valid">Sacuvaj</button>
+            <button mat-button *ngIf="flag==3" type="submit" (click)="deleteKredit()">Obrisi</button>
             <button mat-button (click)="cancel()">Ponisti</button>
-
         </div>
 
     </form>

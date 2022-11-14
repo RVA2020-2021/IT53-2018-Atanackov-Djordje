@@ -11,9 +11,9 @@
         <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
       </ng-container>
       <!--Broj licne karte-->
-      <ng-container matColumnDef="brojLk">
+      <ng-container matColumnDef="borjLk">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Broj licne karte</mat-header-cell>
-        <mat-cell *matCellDef="let row">{{ row.brojLk }}</mat-cell>
+        <mat-cell *matCellDef="let row">{{ row.borjLk }}</mat-cell>
       </ng-container>
       <!-- Ime -->
       <ng-container matColumnDef="ime">
@@ -25,6 +25,10 @@
           <mat-header-cell *matHeaderCellDef mat-sort-header>Prezime</mat-header-cell>
           <mat-cell *matCellDef="let row">{{ row.prezime }}</mat-cell>
         </ng-container>
+        <ng-container matColumnDef="kredit">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Kredit</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.kredit.naziv }}</mat-cell>
+        </ng-container>
       <!-- Action Buttons -->
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef>
@@ -33,10 +37,10 @@
           </button>
         </mat-header-cell>
         <mat-cell *matCellDef="let row; let i = index">
-          <button (click)="openDialog(2, row.id, row.brojLk, row.ime, row.prezime)" mat-icon-button color="primary">
+          <button (click)="openDialog(2, row.id, row.borjLk, row.ime, row.prezime, row.kredit)" mat-icon-button color="primary">
             <mat-icon aria-label="Edit">edit</mat-icon>
           </button>
-          <button (click)="openDialog(3, row.id, row.brojLk, row.ime, row.prezime)" mat-icon-button color="primary">
+          <button (click)="openDialog(3, row.id, row.borjLk, row.ime, row.prezime, row.kredit)" mat-icon-button color="primary">
             <mat-icon aria-label="Delete">delete</mat-icon>
           </button>
         </mat-cell>

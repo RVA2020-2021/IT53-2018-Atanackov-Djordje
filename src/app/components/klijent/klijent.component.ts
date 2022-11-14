@@ -14,7 +14,7 @@ import { KlijentDialogComponent } from '../dialogs/klijent-dialog/klijent-dialog
 })
 export class KlijentComponent implements OnInit {
 
-  displayedColumns = ['id', 'brojLk', 'ime', 'prezime', 'actions'];
+  displayedColumns = ['id', 'borjLk', 'ime', 'prezime','kredit', 'actions'];
   dataSource: MatTableDataSource<Klijent>;
   subscription: Subscription;
 
@@ -43,8 +43,8 @@ export class KlijentComponent implements OnInit {
 
   }
 
-  public openDialog(flag: number, id?: number, brojLk?: number, ime?: string, prezime?: string, kredit?: number) : void{
-    const dialogRef = this.dialog.open(KlijentDialogComponent, {data: {id,brojLk,ime,prezime, kredit}});
+  public openDialog(flag: number, id?: number, borjLk?: number, ime?: string, prezime?: string, kredit?: number) : void{
+    const dialogRef = this.dialog.open(KlijentDialogComponent, {data: {id,borjLk,ime,prezime, kredit}});
 
     dialogRef.componentInstance.flag = flag;
     dialogRef.afterClosed().subscribe(res => {

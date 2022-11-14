@@ -22,7 +22,7 @@
         <div mat-dialog-actions>
             <button mat-button *ngIf="flag ==1" type="submit" (click)="addTipRacuna()" [disabled]="!formControl.valid">Sacuvaj</button>
             <button mat-button *ngIf="flag ==2" type="submit" (click)="updateTipRacuna()" [disabled]="!formControl.valid">Sacuvaj</button>
-            <button mat-button *ngIf="flag ==3" type="submit" (click)="deleteTipRacuna()" [disabled]="!formControl.valid">Obrisi</button>
+            <button mat-button *ngIf="flag ==3" type="submit" (click)="deleteTipRacuna()">Obrisi</button>
             <button mat-button (click)="cancel()">Ponisti</button>
 
         </div>
