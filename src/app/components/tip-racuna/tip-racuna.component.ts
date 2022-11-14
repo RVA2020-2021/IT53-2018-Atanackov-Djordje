@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import { TipRacuna } from 'src/app/models/tipRacuna';
@@ -18,6 +20,9 @@ export class TipRacunaComponent implements OnInit {
   dataSource: MatTableDataSource<TipRacuna>;
   subscription: Subscription;
 
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+
 
   constructor(private tipRacunaServices: TipRacunaService, 
                 private dialog: MatDialog) { }
@@ -35,6 +40,9 @@ export class TipRacunaComponent implements OnInit {
     this.subscription = this.tipRacunaServices.getAllTipRacunas().subscribe(
       data => {
         this.dataSource = new MatTableDataSource(data);
+
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       }
     ),
     (error: Error) => {
@@ -52,6 +60,12 @@ export class TipRacunaComponent implements OnInit {
         this.loadData();
       }
     })
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 
 }

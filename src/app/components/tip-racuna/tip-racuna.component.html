@@ -3,6 +3,11 @@
   </mat-toolbar>
   
   <div class="container mat-elavation-z8">
+
+    <div class="container mat-elavation-z8">
+      <mat-form-field>
+        <input matInput placeholder="Pretraga-tipa-racuna"(keyup)="applyFilter($event.target.value)">
+    </mat-form-field>
   
     <mat-table #table matSort [dataSource]="dataSource" class="mat-cell">
       <!--ID-->
